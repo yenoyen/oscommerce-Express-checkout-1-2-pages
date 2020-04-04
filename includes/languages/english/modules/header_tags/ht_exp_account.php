@@ -11,4 +11,3 @@
 */
   define('MODULE_HEADER_TAGS_EXP_CHECKOUT_TITLE', 'Express Checkout');
   define('MODULE_HEADER_TAGS_EXP_CHECKOUT_DESCRIPTION', 'Use Express Checkout');
-?>
