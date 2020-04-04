@@ -10,8 +10,8 @@
   Released under the GNU General Public License
 */
 
-  class ht_exp_account {
-    var $code = 'ht_exp_account';
+  class ht_exp_checkout {
+    var $code = 'ht_exp_checkout';
     var $group = 'header_tags';
     var $title;
     var $description;
@@ -31,11 +31,11 @@
     function execute() {
       global $oscTemplate,$PHP_SELF,$origin_href;
         if (MODULE_HEADER_TAGS_EXP_CHECKOUT_STATUS=='True'){
-     if ($PHP_SELF=='checkout_shipping.php')    tep_redirect(tep_href_link('checkout_payment_exp.php', '', 'SSL')); 
-      if ($PHP_SELF=='checkout_payment.php')    tep_redirect(tep_href_link('checkout_payment_exp.php', '', 'SSL')); 
+            if ($PHP_SELF=='checkout_shipping.php')    tep_redirect(tep_href_link('checkout_payment_exp.php', '', 'SSL')); 
+            if ($PHP_SELF=='checkout_payment.php')    tep_redirect(tep_href_link('checkout_payment_exp.php', '', 'SSL')); 
    //  if ($PHP_SELF=='login.php')   tep_redirect(tep_href_link('create_account.php', '', 'SSL'));
   
-   }
+        }
     
      }
 
