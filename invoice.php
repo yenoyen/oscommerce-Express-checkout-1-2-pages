@@ -169,7 +169,7 @@ body {
    </div>
   </div>
   </div>
-   <br/>
+   <br />
   <div class="row border">
     <div class="col-sm-12">
         <div class="header">
@@ -195,7 +195,7 @@ body {
         </div>
         </div>
         </div>
-        <br/>
+        <br />
   <div class="row border ">
   <div class="col-sm-4 ">
   <?php
@@ -250,7 +250,7 @@ body {
         </table>
       </div>      
 </div>
-<br/>
+<br />
 
   <?php
   if (tep_not_null($order->info['comments'])) {
@@ -281,7 +281,7 @@ body {
   ?>
 </div>
 </div>
-</br>
+<br />
 
 
 <?php

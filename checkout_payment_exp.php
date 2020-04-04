@@ -429,7 +429,7 @@
       <div class="col-md-4 col-sm-3">
      <div class="buttonSet">
     <div class="text-right"><?php echo tep_draw_button(UPDATE_TOTAL, 'fas fa-calculator', null, 'primary', null, 'btn-success btn-lg btn-block AddItem'); ?></div>
-  </div><br/>
+  </div><br />
  <div class="col-12">
    <div id ="result_payment">
    <?php
@@ -443,7 +443,7 @@
     echo '</ul></div>';
 
    ?>
-  </div></div><br/>
+  </div></div><br />
 <div>
  <?php 
      if (GO_TO_CONFIRMATION=="False"){
@@ -470,7 +470,7 @@
     </div>
    </div>
   </div>
-  <br/>
+  <br />
   <div class="buttonSet">
    <?php 
      if (GO_TO_CONFIRMATION=="False"){
