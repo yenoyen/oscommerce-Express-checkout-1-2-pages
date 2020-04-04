@@ -496,10 +496,6 @@
 
 </form>
 
-<?php
-  require 'includes/template_bottom.php';
-  require 'includes/application_bottom.php';
-?>
 <script>
 $(document).ready(function(){
  	
@@ -580,3 +576,8 @@ $('.progress-bar').css('width', valeur+'%').attr('aria-valuenow', valeur).html('
 });
 </script>
 <script>$('.table-selection4').click(function() { $('.table-selection4').removeClass('success').find('input').prop('checked', false); $(this).addClass('success').find('input').prop('checked', true); });</script>
+
+<?php
+  require 'includes/template_bottom.php';
+  require 'includes/application_bottom.php';
+?>
