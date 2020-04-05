@@ -234,7 +234,7 @@
             <?php
           } else {
             ?>
-        <table class="table border-right border-left border-bottom table-hover m-0">
+        <table class="table border-right border-left border-bottom table-sm table-hover m-0">
           <?php
           // GDPR - can't be checked by default?
           $checked = null;
@@ -246,7 +246,7 @@
               // set the radio button to be checked if it is the method chosen
                $checked = (($quote['id'] . '_' . $method['id'] == $shipping['id']) ? true : false);
               ?>
-              <tr class="table-selection3">
+              <tr class="table-selection table-selection3">
                 <td>
                   <?php
                   echo $quote['module'];
@@ -333,11 +333,11 @@
     <div class="col-sm-7">
       <h5 class="mb-1"><?php echo TABLE_HEADING_PAYMENT_METHOD; ?></h5>
       <div>
-        <table class="table border-right border-left border-bottom table-hover m-0">
+        <table class="table border-right border-left border-bottom table-sm table-hover m-0">
           <?php
           foreach ($selection as $choice) {
             ?>
-            <tr class="table-selection2 ">
+            <tr class="table-selection table-selection2">
               <td><label for="p_<?php echo $choice['id']; ?>"><?php echo $choice['module']; ?></label></td>
               <td class="text-right">
                 <?php
@@ -407,17 +407,16 @@
   <?php
   $PHP_SELF='checkout_payment.php';
   echo $OSCOM_Hooks->call('siteWide', 'injectFormDisplay');
-//  echo 'lllll'.$PHP_SELF;
   ?>
      <div class="row">
       <div  class="col-md-8 col-sm-3">    
-   <h4 class="mb-0 px-4 bg-warning">
+   <h4 class="mb-0 px-4">
         <?php 
         echo ORDER_DETAILS;
         ?>
       </h4>
       <div  id  ="result">
-     <table  class="table table-danger table-hover mb-0">
+     <table  class="table table-hover mb-0">
             <?php
           if (MODULE_ORDER_TOTAL_INSTALLED) {
             echo $order_total_modules->output();
