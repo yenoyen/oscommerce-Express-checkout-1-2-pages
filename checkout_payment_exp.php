@@ -193,16 +193,15 @@
 <div class="contentContainer">
   <div class="row">
     <div class="col-sm-7">
-      <h5 class="mb-1"><?php echo LIST_PRODUCTS; ?><small><a class="font-weight-lighter ml-2" href="<?php echo tep_href_link('shopping_cart.php', '', 'SSL'); ?>"><?php echo TEXT_EDIT; ?></a></small>
-      </h5>
-  
-        <ul class="list-group list-group-flush">
+      <h5 class="mb-1"><?php echo LIST_PRODUCTS; ?></h5>
+
+        <ul class="list-group">
           <?php
           
           for ($i=0, $n=sizeof($order->products); $i<$n; $i++) {
-            echo '<li class="list-group-item list-group-flush  list-group-item-info">';
+            echo '<li class="list-group-item">';
               echo '<span class="float-right">' . $currencies->display_price($order->products[$i]['final_price'], $order->products[$i]['tax'], $order->products[$i]['qty']) . '</span>';
-              echo '<h5 class="mb-1">' . $order->products[$i]['name'] . '<small> x ' . $order->products[$i]['qty'] . '</small></h5>';
+              echo '<p class="mb-1">' . $order->products[$i]['name'] . '<br /><small> x ' . $order->products[$i]['qty'] . '</small></p>';
               if ( (isset($order->products[$i]['attributes'])) && (sizeof($order->products[$i]['attributes']) > 0) ) {
                 echo '<p class="w-100 mb-1">';
                 for ($j=0, $n2=sizeof($order->products[$i]['attributes']); $j<$n2; $j++) {
@@ -214,22 +213,22 @@
           }
           ?>
         </ul>
-       
+<p class="text-right"><a class="btn btn-light btn-small" href="<?php echo tep_href_link('shopping_cart.php', '', 'SSL'); ?>"><?php echo TEXT_EDIT; ?></a></p>       
          
     </div>
 
   </div>
   <div class="row">
     <div class="col-sm-7">
-      <h5 class="mb-1"><?php echo TABLE_HEADING_SHIPPING_METHOD; ?></h5>
+      <h4><?php echo TABLE_HEADING_SHIPPING_METHOD; ?></h4>
       <div>
         <?php
         if ($module_count > 0) {
           if ($free_shipping == true) {
             ?>
         <div class="alert alert-info mb-0" role="alert">
-          <p class="lead"><b><?php echo FREE_SHIPPING_TITLE; ?></b></p>
-          <p class="lead"><?php echo sprintf(FREE_SHIPPING_DESCRIPTION, $currencies->format(MODULE_ORDER_TOTAL_SHIPPING_FREE_SHIPPING_OVER)) . tep_draw_hidden_field('shipping', 'free_free'); ?></p>
+          <p><b><?php echo FREE_SHIPPING_TITLE; ?></b></p>
+          <p><?php echo sprintf(FREE_SHIPPING_DESCRIPTION, $currencies->format(MODULE_ORDER_TOTAL_SHIPPING_FREE_SHIPPING_OVER)) . tep_draw_hidden_field('shipping', 'free_free'); ?></p>
         </div>
             <?php
           } else {
@@ -305,12 +304,12 @@
     </div>
     
     <div class="col-sm-5">
-      <h5 class="mb-1">
+      <h4>
         <?php
         echo TABLE_HEADING_SHIPPING_ADDRESS;
         echo sprintf(LINK_TEXT_EDIT, 'font-weight-lighter ml-3', tep_href_link('checkout_shipping_address.php', '', 'SSL'));
         ?>
-      </h5>
+      </h4>
       <div class="border">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><?php echo SHIPPING_FA_ICON . $customer->make_address_label($_SESSION['sendto'], true, ' ', '<br>'); ?></li>
@@ -331,9 +330,9 @@
 
   <div class="row">
     <div class="col-sm-7">
-      <h5 class="mb-1"><?php echo TABLE_HEADING_PAYMENT_METHOD; ?></h5>
+      <h4><?php echo TABLE_HEADING_PAYMENT_METHOD; ?></h4>
       <div>
-        <table class="table border-right border-left border-bottom table-sm table-hover m-0">
+        <table class="table border-right border-left border-bottom table-sm m-0 table-hover">
           <?php
           foreach ($selection as $choice) {
             ?>
@@ -382,12 +381,12 @@
       </div>
     </div>
     <div class="col-sm-5">
-      <h5 class="mb-1">
+      <h4>
         <?php
         echo TABLE_HEADING_BILLING_ADDRESS;
         echo sprintf(LINK_TEXT_EDIT, 'font-weight-lighter ml-3', tep_href_link('checkout_payment_address.php', '', 'SSL'));
         ?>
-      </h5>
+      </h4>
       <div class="border">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><?php echo PAYMENT_FA_ICON . $customer->make_address_label($_SESSION['billto'], true, ' ', '<br>'); ?>
@@ -396,8 +395,6 @@
       </div>
     </div>
   </div>
-
-  <hr>
 
   <div class="form-group row">
     <label for="inputComments" class="col-form-label col-sm-4 text-sm-right"><?php echo ENTRY_COMMENTS; ?></label>
@@ -410,7 +407,7 @@
   ?>
      <div class="row">
       <div  class="col-md-8 col-sm-3">    
-   <h4 class="mb-0 px-4">
+   <h4>
         <?php 
         echo ORDER_DETAILS;
         ?>
@@ -428,7 +425,7 @@
       <div class="col-md-4 col-sm-3">
      <div class="buttonSet">
     <div class="text-right"><?php echo tep_draw_button(UPDATE_TOTAL, 'fas fa-calculator', null, 'primary', null, 'btn-success btn-lg btn-block AddItem'); ?></div>
-  </div><br />
+  </div>
  <div class="col-12">
    <div id ="result_payment">
    <?php
@@ -436,13 +433,13 @@
     echo '<ul class="list-group">';
     
             echo '<li class="list-group-item">';
-            echo '<h5 class="mb-1">' . HEADING_PAYMENT_METHOD . '<small></small></h5>';
+            echo '<h4>' . HEADING_PAYMENT_METHOD . '</h4>';
             echo '<p class="w-100 mb-1">' . $order->info['payment_method'] . '</p>';
           echo '</li>';
     echo '</ul></div>';
 
    ?>
-  </div></div><br />
+  </div></div>
 <div>
  <?php 
      if (GO_TO_CONFIRMATION=="False"){
@@ -469,7 +466,7 @@
     </div>
    </div>
   </div>
-  <br />
+  
   <div class="buttonSet">
    <?php 
      if (GO_TO_CONFIRMATION=="False"){
