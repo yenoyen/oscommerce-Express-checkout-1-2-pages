@@ -246,7 +246,7 @@
               // set the radio button to be checked if it is the method chosen
                $checked = (($quote['id'] . '_' . $method['id'] == $shipping['id']) ? true : false);
               ?>
-              <tr class="table-selection3 table-success">
+              <tr class="table-selection3">
                 <td>
                   <?php
                   echo $quote['module'];
@@ -333,7 +333,7 @@
     <div class="col-sm-7">
       <h5 class="mb-1"><?php echo TABLE_HEADING_PAYMENT_METHOD; ?></h5>
       <div>
-        <table class="table border-right border-left border-bottom table-hover m-0 table-warning ">
+        <table class="table border-right border-left border-bottom table-hover m-0">
           <?php
           foreach ($selection as $choice) {
             ?>
