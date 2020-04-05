@@ -101,11 +101,10 @@ echo '<div class="contentContainer">';
     echo '<ul class="list-group">';
     
             echo '<li class="list-group-item">';
-            echo '<h5 class="mb-1">' . HEADING_PAYMENT_METHOD . '<small></small></h5>';
+            echo '<h5 class="mb-1">' . HEADING_PAYMENT_METHOD . '</h5>';
             echo '<p class="w-100 mb-1">' . $order->info['payment_method'] . '</p>';
           echo '</li>';
     echo '</ul></div>';
-
  
   require('includes/application_bottom.php');
 ?>
